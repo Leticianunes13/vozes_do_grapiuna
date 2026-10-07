@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acervo de Autores - Vozes do Grapiúna</title>
+    <link rel="stylesheet" href="acervo.css">
+    <link rel="stylesheet" href="acessibilidade.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO PADRÃO REORGANIZADO -->
+    <header>
+        <!-- Linha Superior: Logo (Esquerda) + Acessibilidade Expansível (Direita) -->
+        <div class="cabecalho-topo">
+            <div class="logo">Vozes do Grapiúna</div>
+
+            <div class="acessibilidade-container">
+                <button id="btn-toggle-acessibilidade" class="btn-acessibilidade-toggle"
+                    title="Opções de Acessibilidade">
+                    ♿ <span>Acessibilidade</span>
+                </button>
+
+                <!-- Menu Expansível com os botões -->
+                <div id="acessibilidade-menu" class="acessibilidade-menu">
+                    <button id="btn-aumentar" title="Aumentar Fonte">A+</button>
+                    <button id="btn-diminuir" title="Diminuir Fonte">A-</button>
+                    <button id="btn-contraste" title="Modo Escuro">🌓</button>
+                    <button id="btn-ler" title="Ler Página">🔊</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de Ferramentas / Navegação Abaixo -->
+        <nav class="barra-navegacao">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="acervo.html" class="ativo">Escritores locais</a></li>
+                <li><a href="#">Vitrine literária</a></li>
+                <li><a href="#">Quem Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-spa">
+
+        <!-- CARROSSEL DE AUTORES -->
+        <section class="carrossel-autores">
+            <div id="lista-fotos" class="lista-fotos">
+                <!-- As fotos dos autores serão geradas aqui pelo JS -->
+            </div>
+            <button class="btn-seta">></button>
+        </section>
+
+        <!-- ÁREA DINÂMICA DO AUTOR -->
+        <section id="area-autor" class="detalhes-autor">
+            <h2 id="nome-autor">Nome do Autor</h2>
+
+            <div class="resumo-container">
+                <p id="resumo-autor">Resumo sobre o autor aparecerá aqui.</p>
+            </div>
+
+            <div class="obras-container">
+                <h3>Obras</h3>
+                <div id="lista-obras" class="grade-obras">
+                    <!-- Os ícones e títulos das obras entrarão aqui -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= WIDGET VLIBRAS ================= -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script src="acervo.js"></script>
+    <script src="acessibilidade.js"></script>
+</body>
+
+</html>

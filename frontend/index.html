@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vozes do Grapiúna</title>
+
+    <!-- CSS do Leaflet (Mapa) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="acessibilidade.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO REORGANIZADO -->
+    <header>
+        <!-- Linha Superior: Logo (Esquerda) + Acessibilidade Expansível (Direita) -->
+        <div class="cabecalho-topo">
+            <div class="logo">Vozes do Grapiúna</div>
+
+            <div class="acessibilidade-container">
+                <button id="btn-toggle-acessibilidade" class="btn-acessibilidade-toggle"
+                    title="Opções de Acessibilidade">
+                    ♿ <span>Acessibilidade</span>
+                </button>
+
+                <!-- Menu Expansível com os botões -->
+                <div id="acessibilidade-menu" class="acessibilidade-menu">
+                    <button id="btn-aumentar" title="Aumentar Fonte">A+</button>
+                    <button id="btn-diminuir" title="Diminuir Fonte">A-</button>
+                    <button id="btn-contraste" title="Modo Escuro">🌓</button>
+                    <button id="btn-ler" title="Ler Página">🔊</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de Ferramentas / Navegação Abaixo -->
+        <nav class="barra-navegacao">
+            <ul>
+                <li><a href="#" class="ativo">Home</a></li>
+                <li><a href="acervo.html">Escritores locais</a></li>
+                <li><a href="#">Vitrine literária</a></li>
+                <li><a href="#">Quem Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="vitrine-semana">
+        <h2>Confira os textos da semana</h2>
+        <div class="carrossel-container">
+            <div id="cards-wrapper" class="cards-wrapper"></div>
+            <button class="btn-seta">></button>
+        </div>
+    </section>
+
+    <section class="mapa-afetivo">
+        <h2>Navegue pela nossa História</h2>
+        <p>De Jorge Amado a Cyro de Mattos, as ruas de Itabuna guardam histórias. Explore o nosso mapa afetivo e
+            descubra locais que marcaram e inspiraram a literatura grapiúna.</p>
+        <div id="mapa"></div>
+    </section>
+
+    <section class="acervo-autores">
+        <div class="foto-placeholder">
+            foto
+        </div>
+        <div class="acervo-info">
+            <h2>Conheça os grandes nomes que marcaram nossa cidade!</h2>
+            <p>Descubra a trajetória de escritores que inspiraram a cultura da nossa região.</p>
+            <button id="btn-acervo" class="btn-acao">Ver acervo de autores</button>
+        </div>
+    </section>
+
+    <section class="cta-participacao">
+        <h2>Que tal compartilhar sua arte com a cidade?</h2>
+        <p>A nossa vitrine é feita por você. Envie seu poema, conto ou crônica diretamente pelo Telegram e faça parte da
+            próxima atualização.</p>
+        <button class="btn-destaque">Encaminhar meu texto</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Vozes do Grapiúna. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- WIDGET VLIBRAS -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- JS do Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="index.js"></script>
+    <script src="acessibilidade.js"></script>
+
+</body>
+
+</html>

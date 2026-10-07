@@ -1,0 +1,266 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    padding: 20px;
+    color: #333;
+    background-color: #fcfcfc;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CABEÇALHO PADRÃO */
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 35px;
+}
+
+.cabecalho-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #8b263e;
+}
+
+/* BARRA DE FERRAMENTAS / NAVEGAÇÃO */
+.barra-navegacao {
+    width: 100%;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 12px;
+}
+
+.barra-navegacao ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.barra-navegacao a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.barra-navegacao a:hover,
+.barra-navegacao a.ativo {
+    color: #8b263e;
+}
+
+/* CONTAINER PRINCIPAL SPA */
+.container-spa {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* CARROSSEL SUPERIOR */
+.carrossel-autores {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.lista-fotos {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 5px;
+}
+
+/* FOTOS DOS AUTORES (Clicáveis) */
+.foto-autor {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background-color: #ddd;
+    border: 3px solid transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #666;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.foto-autor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.foto-autor:hover,
+.foto-autor.ativo {
+    border-color: #8b263e;
+    transform: scale(1.05);
+}
+
+.btn-seta {
+    border: 1px solid #333;
+    background: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/* GRID DE DETALHES DO AUTOR */
+.detalhes-autor h2 {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+}
+
+.detalhes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    text-align: left;
+}
+
+/* COLUNA DA BIOGRAFIA */
+.coluna-biografia {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.coluna-biografia h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #8b263e;
+    border-bottom: 2px solid #f3f4f6;
+    padding-bottom: 8px;
+}
+
+.resumo-container p {
+    line-height: 1.7;
+    color: #4b5563;
+    text-align: justify;
+    font-size: 0.98em;
+}
+
+/* COLUNA DE OBRAS (CARDS DE LIVROS) */
+.coluna-obras h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #8b263e;
+    border-bottom: 2px solid #f3f4f6;
+    padding-bottom: 8px;
+}
+
+.grade-obras {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* CARD INDIVIDUAL DA OBRA */
+.card-obra {
+    display: flex;
+    gap: 16px;
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-obra:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.capa-livro {
+    width: 90px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+    background-color: #eee;
+}
+
+.info-livro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo-livro {
+    font-size: 1.15em;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.resumo-livro {
+    font-size: 0.9em;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+/* RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS */
+@media (max-width: 768px) {
+    .detalhes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-obra {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .capa-livro {
+        width: 110px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .btn-acessibilidade-toggle span {
+        display: none;
+    }
+
+    .barra-navegacao ul {
+        gap: 12px;
+        justify-content: space-between;
+    }
+
+    .barra-navegacao a {
+        font-size: 0.85rem;
+    }
+}

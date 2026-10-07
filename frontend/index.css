@@ -1,0 +1,221 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    padding: 20px;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CABEÇALHO */
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 35px;
+}
+
+.cabecalho-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #8b263e;
+}
+
+/* BARRA DE FERRAMENTAS / NAVEGAÇÃO */
+.barra-navegacao {
+    width: 100%;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 12px;
+}
+
+.barra-navegacao ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.barra-navegacao a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.barra-navegacao a:hover,
+.barra-navegacao a.ativo {
+    color: #8b263e;
+}
+
+/* RESPONSIVIDADE MOBILE */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .btn-acessibilidade-toggle span {
+        display: none;
+        /* Em telas muito pequenas exibe apenas o ícone ♿ */
+    }
+
+    .barra-navegacao ul {
+        gap: 12px;
+        justify-content: space-between;
+    }
+
+    .barra-navegacao a {
+        font-size: 0.85rem;
+    }
+}
+
+/* SEÇÃO 1: VITRINE */
+.vitrine-semana {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.carrossel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cards-wrapper {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+.card-texto {
+    border: 1px solid #999;
+    padding: 10px;
+    width: 250px;
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.card-info {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px dashed #ccc;
+    padding-right: 10px;
+}
+
+.card-previa {
+    flex: 1;
+    text-align: left;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.btn-ler {
+    margin-top: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.btn-seta {
+    border: 1px solid #333;
+    background: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* SEÇÃO 2: MAPA */
+.mapa-afetivo {
+    margin-bottom: 60px;
+}
+
+.mapa-afetivo p {
+    margin: 10px 0 20px 0;
+    max-width: 800px;
+}
+
+#mapa {
+    height: 300px;
+    width: 100%;
+    background-color: #e0e0e0;
+    border: 1px solid #999;
+}
+
+/* SEÇÃO 3: ACERVO */
+.acervo-autores {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.foto-placeholder {
+    width: 200px;
+    height: 200px;
+    background-color: #eee;
+    border: 1px solid #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.acervo-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 1;
+}
+
+/* SEÇÃO 4: CTA */
+.cta-participacao {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.cta-participacao p {
+    margin: 15px 0 25px 0;
+}
+
+.btn-acao,
+.btn-destaque {
+    padding: 10px 20px;
+    border: 1px solid #333;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* RODAPÉ */
+footer {
+    text-align: center;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    color: #666;
+}

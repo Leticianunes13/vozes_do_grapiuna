@@ -1,0 +1,45 @@
+# ==========================================
+# SEGREDO E SEGURANÇA (CRÍTICO)
+# ==========================================
+.env
+.env.*
+!.env.example
+
+# ==========================================
+# AMBIENTE VIRTUAL E DEPENDÊNCIAS
+# ==========================================
+venv/
+env/
+.venv/
+ENV/
+
+# ==========================================
+# PYTHON & CACHE
+# ==========================================
+__pycache__/
+*.py[codz]
+*$py.class
+*.so
+.pytest_cache/
+
+# ==========================================
+# EDITOR & IDE (VS Code / PyCharm)
+# ==========================================
+.vscode/
+.idea/
+*.swp
+tempCodeRunnerFile.py
+
+# ==========================================
+# SISTEMA OPERACIONAL (Windows / macOS)
+# ==========================================
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+.DS_Store
+
+# ==========================================
+# LOGS E BANCO LOCAL DE TESTES
+# ==========================================
+*.log
+*.sqlite3

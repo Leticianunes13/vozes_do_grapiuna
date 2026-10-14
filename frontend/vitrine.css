@@ -1,0 +1,453 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    padding: 20px;
+    color: #333;
+    background-color: #fcfcfc;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===================================================
+   CABEÇALHO PADRÃO DO PROJETO
+   =================================================== */
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 35px;
+}
+
+.cabecalho-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #8b263e;
+}
+
+.logo-icone {
+    color: #8b263e;
+    flex-shrink: 0;
+}
+
+/* BARRA DE FERRAMENTAS / NAVEGAÇÃO */
+.barra-navegacao {
+    width: 100%;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 12px;
+}
+
+.barra-navegacao ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.barra-navegacao a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.barra-navegacao a:hover,
+.barra-navegacao a.ativo {
+    color: #8b263e;
+}
+
+/* ===================================================
+   CONTEÚDO PRINCIPAL: VITRINE LITERÁRIA
+   =================================================== */
+.vitrine-principal {
+    margin-bottom: 50px;
+}
+
+/* Título com Linha Decorativa Lateral (Conforme Modelo) */
+.titulo-secao-container {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.titulo-vitrine {
+    font-family: 'Georgia', 'Playfair Display', serif;
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+}
+
+.linha-decorativa {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #222;
+    border-radius: 1px;
+}
+
+/* Filtro Dropdown */
+.filtro-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.filtro-label {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.filtro-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    border: 1.5px solid #222;
+    border-radius: 6px;
+    padding: 6px 36px 6px 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+    cursor: pointer;
+    min-width: 140px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='none' stroke='%23222' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M2 3l5 4 5-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filtro-select:focus {
+    outline: none;
+    border-color: #8b263e;
+    box-shadow: 0 0 0 3px rgba(139, 38, 62, 0.15);
+}
+
+/* GRADE DE CARDS DA VITRINE */
+.grade-vitrine {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 28px;
+    margin-bottom: 60px;
+}
+
+/* Card Individual Conforme o Wireframe */
+.card-vitrine {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+}
+
+.card-vitrine:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+}
+
+.card-vitrine.oculto {
+    display: none !important;
+}
+
+.card-conteudo {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Espaço da Imagem/Capa com Placeholder 'X' */
+.card-imagem-container {
+    flex-shrink: 0;
+}
+
+.placeholder-imagem {
+    width: 125px;
+    height: 160px;
+    border: 1.5px solid #333;
+    background-color: #f1f2f4;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
+
+.placeholder-x {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Imagem Real (se houver no futuro) */
+.placeholder-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Metadados: Título, Gênero, Contato, Autor */
+.card-detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.campo-dado {
+    font-size: 1.15rem;
+    color: #222;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.campo-dado strong {
+    font-weight: 700;
+    color: #111;
+    margin-right: 4px;
+}
+
+.campo-dado span {
+    font-weight: 400;
+    color: #222;
+}
+
+/* Rodapé do Card: Data de Publicação */
+.card-rodape {
+    margin-top: 18px;
+    padding-top: 10px;
+    border-top: 1px dashed #e5e7eb;
+}
+
+.data-publicacao {
+    font-size: 0.95rem;
+    color: #4b5563;
+    font-style: normal;
+}
+
+/* ===================================================
+   CHAMADA DE AÇÃO (CTA) COM ESTILO DE CITAÇÃO “ ”
+   =================================================== */
+.cta-citacao-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 60px 0 30px 0;
+    padding: 0 10px;
+}
+
+.aspas {
+    font-family: 'Georgia', serif;
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    line-height: 1;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.cta-participacao {
+    text-align: center;
+    padding: 35px 25px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    flex: 1;
+    max-width: 850px;
+}
+
+.cta-participacao h2 {
+    font-size: 1.45rem;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.cta-participacao p {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 12px auto 22px auto;
+    max-width: 650px;
+}
+
+.btn-destaque {
+    padding: 12px 26px;
+    border: 1.5px solid #8b263e;
+    background-color: #8b263e;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-destaque:hover {
+    background-color: #6d1c30;
+    border-color: #6d1c30;
+    transform: translateY(-1px);
+}
+
+/* ===================================================
+   RODAPÉ
+   =================================================== */
+footer {
+    text-align: center;
+    border-top: 1px solid #ccc;
+    padding-top: 25px;
+    margin-top: 40px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* ===================================================
+   ACESSIBILIDADE: COMPATIBILIDADE COM MODO ESCURO
+   =================================================== */
+body.modo-escuro {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+body.modo-escuro .logo,
+body.modo-escuro .logo-icone {
+    color: #e28d9d !important;
+}
+
+body.modo-escuro .titulo-vitrine,
+body.modo-escuro .filtro-label,
+body.modo-escuro .campo-dado strong,
+body.modo-escuro .aspas,
+body.modo-escuro .cta-participacao h2 {
+    color: #f3f4f6 !important;
+}
+
+body.modo-escuro .linha-decorativa {
+    background-color: #6b7280 !important;
+}
+
+body.modo-escuro .filtro-select {
+    background-color: #1f2937 !important;
+    color: #f3f4f6 !important;
+    border-color: #4b5563 !important;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='none' stroke='%23f3f4f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M2 3l5 4 5-4'/%3E%3C/svg%3E") !important;
+}
+
+body.modo-escuro .card-vitrine {
+    background-color: #1e1e1e !important;
+    border-color: #374151 !important;
+}
+
+body.modo-escuro .placeholder-imagem {
+    background-color: #2a2a2a !important;
+    border-color: #4b5563 !important;
+}
+
+body.modo-escuro .placeholder-x line {
+    stroke: #6b7280 !important;
+}
+
+body.modo-escuro .campo-dado,
+body.modo-escuro .campo-dado span,
+body.modo-escuro .data-publicacao,
+body.modo-escuro .cta-participacao p {
+    color: #d1d5db !important;
+}
+
+body.modo-escuro .card-rodape {
+    border-top-color: #374151 !important;
+}
+
+body.modo-escuro .cta-participacao {
+    background-color: #1e1e1e !important;
+    border-color: #374151 !important;
+}
+
+body.modo-escuro .btn-destaque {
+    background-color: #8b263e !important;
+    color: #ffffff !important;
+    border-color: #8b263e !important;
+}
+
+/* ===================================================
+   RESPONSIVIDADE MOBILE
+   =================================================== */
+@media (max-width: 768px) {
+    .grade-vitrine {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-vitrine {
+        font-size: 1.8rem;
+    }
+
+    .cta-citacao-wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .aspas {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 12px;
+    }
+
+    .card-conteudo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .placeholder-imagem {
+        width: 140px;
+        height: 180px;
+    }
+
+    .card-rodape {
+        text-align: center;
+    }
+
+    .titulo-secao-container {
+        gap: 10px;
+    }
+
+    .titulo-vitrine {
+        font-size: 1.5rem;
+    }
+}
+

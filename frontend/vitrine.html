@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitrine Literária - Vozes do Grapiúna</title>
+
+    <link rel="stylesheet" href="vitrine.css">
+    <link rel="stylesheet" href="acessibilidade.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO PADRÃO -->
+    <header>
+        <!-- Linha Superior: Logo + Acessibilidade Expansível -->
+        <div class="cabecalho-topo">
+            <div class="logo">
+                <!-- Ícone estilizado de livro aberto com pena, conforme o modelo -->
+                <svg class="logo-icone" viewBox="0 0 48 36" width="36" height="28" fill="currentColor" aria-hidden="true">
+                    <path d="M 24 10 C 20 5 10 5 2 7 L 2 32 C 10 30 20 30 24 35 C 28 30 38 30 46 32 L 46 7 C 38 5 28 5 24 10 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 24 10 L 24 35" stroke="currentColor" stroke-width="2.5"/>
+                    <path d="M 24 2 L 21 8 L 24 14 L 27 8 Z" fill="currentColor"/>
+                    <circle cx="24" cy="9" r="1.5" fill="#fff"/>
+                </svg>
+                <span>Vozes do Grapiúna</span>
+            </div>
+
+            <div class="acessibilidade-container">
+                <button id="btn-toggle-acessibilidade" class="btn-acessibilidade-toggle"
+                    title="Opções de Acessibilidade">
+                    ♿ <span>Acessibilidade</span>
+                </button>
+
+                <!-- Menu Expansível com os botões -->
+                <div id="acessibilidade-menu" class="acessibilidade-menu">
+                    <button id="btn-aumentar" title="Aumentar Fonte">A+</button>
+                    <button id="btn-diminuir" title="Diminuir Fonte">A-</button>
+                    <button id="btn-contraste" title="Modo Escuro">🌓</button>
+                    <button id="btn-ler" title="Ler Página">🔊</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de Ferramentas / Navegação -->
+        <nav class="barra-navegacao">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="acervo.html">Escritores locais</a></li>
+                <li><a href="vitrine.html" class="ativo">Vitrine literária</a></li>
+                <li><a href="#">Quem Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="vitrine-principal">
+
+        <!-- TÍTULO DA SEÇÃO COM LINHA CONTÍNUA -->
+        <div class="titulo-secao-container">
+            <h1 class="titulo-vitrine">Vitrine Literária</h1>
+            <div class="linha-decorativa" aria-hidden="true"></div>
+        </div>
+
+        <!-- SEÇÃO DO FILTRO -->
+        <div class="filtro-container">
+            <label for="filtro-genero" class="filtro-label">Filtro:</label>
+            <div class="select-wrapper">
+                <select id="filtro-genero" class="filtro-select">
+                    <option value="todos">Todos</option>
+                    <option value="poesia">Poesia</option>
+                    <option value="conto">Conto</option>
+                    <option value="cronica">Crônica</option>
+                    <option value="romance">Romance</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- LISTA DE CARDS DA VITRINE LITERÁRIA -->
+        <section class="grade-vitrine" id="grade-vitrine">
+
+            <!-- Card 1 (Modelo fiel com marcações originais) -->
+            <article class="card-vitrine" data-genero="poesia">
+                <div class="card-conteudo">
+                    <!-- Espaço para capa/imagem com placeholder em X conforme o modelo -->
+                    <div class="card-imagem-container">
+                        <div class="placeholder-imagem" title="Capa da Obra">
+                            <svg class="placeholder-x" viewBox="0 0 100 120" preserveAspectRatio="none">
+                                <line x1="0" y1="0" x2="100" y2="120" stroke="#888" stroke-width="1.5" />
+                                <line x1="100" y1="0" x2="0" y2="120" stroke="#888" stroke-width="1.5" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Metadados da Obra -->
+                    <div class="card-detalhes">
+                        <p class="campo-dado"><strong>Título:</strong> <span>Canto do Cacau</span></p>
+                        <p class="campo-dado"><strong>Gênero:</strong> <span>Poesia</span></p>
+                        <p class="campo-dado"><strong>Contato:</strong> <span>@canto.cacau ou (73) 99123-4567</span></p>
+                        <p class="campo-dado"><strong>Autor:</strong> <span>Leonardo Oliveira</span></p>
+                    </div>
+                </div>
+                <footer class="card-rodape">
+                    <span class="data-publicacao">Publicado em 08 de Outubro de 2026</span>
+                </footer>
+            </article>
+
+            <!-- Card 2 (Exemplo: Conto) -->
+            <article class="card-vitrine" data-genero="conto">
+                <div class="card-conteudo">
+                    <div class="card-imagem-container">
+                        <div class="placeholder-imagem" title="Capa da Obra">
+                            <svg class="placeholder-x" viewBox="0 0 100 120" preserveAspectRatio="none">
+                                <line x1="0" y1="0" x2="100" y2="120" stroke="#888" stroke-width="1.5" />
+                                <line x1="100" y1="0" x2="0" y2="120" stroke="#888" stroke-width="1.5" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="card-detalhes">
+                        <p class="campo-dado"><strong>Título:</strong> <span>Mistérios do Rio Cachoeira</span></p>
+                        <p class="campo-dado"><strong>Gênero:</strong> <span>Conto</span></p>
+                        <p class="campo-dado"><strong>Contato:</strong> <span>@misterios.rio ou (73) 98765-4321</span></p>
+                        <p class="campo-dado"><strong>Autor:</strong> <span>Ana Luzia Grapiúna</span></p>
+                    </div>
+                </div>
+                <footer class="card-rodape">
+                    <span class="data-publicacao">Publicado em 28 de Setembro de 2026</span>
+                </footer>
+            </article>
+
+            <!-- Card 3 (Exemplo: Crônica) -->
+            <article class="card-vitrine" data-genero="cronica">
+                <div class="card-conteudo">
+                    <div class="card-imagem-container">
+                        <div class="placeholder-imagem" title="Capa da Obra">
+                            <svg class="placeholder-x" viewBox="0 0 100 120" preserveAspectRatio="none">
+                                <line x1="0" y1="0" x2="100" y2="120" stroke="#888" stroke-width="1.5" />
+                                <line x1="100" y1="0" x2="0" y2="120" stroke="#888" stroke-width="1.5" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="card-detalhes">
+                        <p class="campo-dado"><strong>Título:</strong> <span>Tardes na Praça Olinto Leone</span></p>
+                        <p class="campo-dado"><strong>Gênero:</strong> <span>Crônica</span></p>
+                        <p class="campo-dado"><strong>Contato:</strong> <span>@tardes.itabuna ou 073 99911-2233</span></p>
+                        <p class="campo-dado"><strong>Autor:</strong> <span>Carlos Drumond Grapiúna</span></p>
+                    </div>
+                </div>
+                <footer class="card-rodape">
+                    <span class="data-publicacao">Publicado em 15 de Setembro de 2026</span>
+                </footer>
+            </article>
+
+            <!-- Card 4 (Exemplo com formato [XXXX] do modelo original para referência) -->
+            <article class="card-vitrine" data-genero="romance">
+                <div class="card-conteudo">
+                    <div class="card-imagem-container">
+                        <div class="placeholder-imagem" title="Capa da Obra">
+                            <svg class="placeholder-x" viewBox="0 0 100 120" preserveAspectRatio="none">
+                                <line x1="0" y1="0" x2="100" y2="120" stroke="#888" stroke-width="1.5" />
+                                <line x1="100" y1="0" x2="0" y2="120" stroke="#888" stroke-width="1.5" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="card-detalhes">
+                        <p class="campo-dado"><strong>Título:</strong> <span>[XXXX]</span></p>
+                        <p class="campo-dado"><strong>Gênero:</strong> <span>[XXXX]</span></p>
+                        <p class="campo-dado"><strong>Contato:</strong> <span>@ ou 073</span></p>
+                        <p class="campo-dado"><strong>Autor:</strong> <span>[XXXXXX]</span></p>
+                    </div>
+                </div>
+                <footer class="card-rodape">
+                    <span class="data-publicacao">Publicado em XX de XX de 2026</span>
+                </footer>
+            </article>
+
+        </section>
+
+        <!-- CHAMADA DE AÇÃO (CTA DA HOME COM ESTILO DE CITAÇÃO CONFORME O MODELO) -->
+        <section class="cta-citacao-wrapper">
+            <span class="aspas aspas-abertura" aria-hidden="true">“</span>
+            
+            <div class="cta-participacao">
+                <h2>Que tal compartilhar sua arte com a cidade?</h2>
+                <p>A nossa vitrine é feita por você. Envie seu poema, conto ou crônica diretamente pelo Telegram e faça parte da próxima atualização.</p>
+                <button class="btn-destaque" id="btn-cta-texto">Encaminhar meu texto</button>
+            </div>
+
+            <span class="aspas aspas-fechamento" aria-hidden="true">”</span>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ PADRÃO -->
+    <footer>
+        <p>&copy; 2026 Vozes do Grapiúna. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- WIDGET VLIBRAS -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- SCRIPTS -->
+    <script src="acessibilidade.js"></script>
+    <script src="vitrine.js"></script>
+
+</body>
+
+</html>
+
